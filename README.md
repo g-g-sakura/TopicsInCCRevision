@@ -53,6 +53,22 @@ In addition, as pointed out in E.2.2 and E.2.6.1 of CC:2022 Part 2, cryptographi
 
 Therefore, specifying cryptographic key agreement using rather FCS_CKM.5 than FCS_COP.1 will be considered as a sound approach, by taking into account the FCS_CKM.5, its dependecy and its supporting text.
 
-# CC:2022 Part 3
-## ALC_TAT.2
-To be documented
+# CEM:2022
+## ALC_TAT.2 and ALC_TAT.3
+The CC attempts to use the term "implementation standard" to describe security assurance requirements because CC is a security standard that does not specify a certain programming language.
+However, there was a problem that the contribution to security or added value to security is not readily apparent, as seen in 14.8.2.4 and 14.8.3.4 of CEM v3.1 release 5.
+
+If we interpret the term “implementation standard” as “coding rule,” we may have various images.
+Some may imagine something like naming conventions, while others may imagine secure coding rules.
+Given the fact that CC is a security standard and taking into accout modern development environments, it is obvious that emphasis is placed on the latter rather than the former.
+In light of this situation, texts of ALC_TAT.2 and ALC_TAT.3 in CEM:2022 have been revised to clarify the contribution and value added to security by implementation standards.
+
+In real-world secure coding, not limited to CC, developers may use secure coding standards to determine whether there is a violation or not, or to analyze whether a violation does not affect security (confidentiality, integrity, availability) even if it does as a result of inspection by a tool.
+
+In the context of secure coding, the following questions come to mind:
+- Are the third-party components to be incorporated implemented more securely than required by the final product?
+- Does the development tool or its specific version meet the security needs or implementation standards of the company developing the certified product?
+- Will using the development tool, or using the development tool in a particular way, produce an implementation representation that is free of security concerns?
+- Should the behavior of development tools and the inherent concerns (including the libraries provided) be recognized before proceeding with the development of security products?
+
+The description in 15.9.2.4.3 and in 15.9.3.4.3 of CEM:2022 has been revised so that above natural questions can be answered through secure development.
