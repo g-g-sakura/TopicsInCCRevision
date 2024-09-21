@@ -71,4 +71,4 @@ In the context of secure coding, the following questions come to mind:
 - Will using the development tool, or using the development tool in a particular way, produce an implementation representation that is free of security concerns?
 - Should the behavior of development tools and the inherent concerns (including the libraries provided) be recognized before proceeding with the development of security products?
 
-The description in 15.9.2.4.3 and in 15.9.3.4.3 of CEM:2022 has been revised so that above natural questions can be answered through secure development.
+The description in 15.9.2.4.3 and in 15.9.3.4.3 of CEM:2022 has been revised so that above naive questions can be answered through secure development.
