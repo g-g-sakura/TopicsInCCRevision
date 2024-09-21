@@ -34,7 +34,24 @@ Therefore, "referring to other standards" only in TSS without explicitly referri
 
 # CC:2022 Part 2
 ## FCS_CKM.5
-To be documented
+### Specifying cryptographic key agreement using FCS_CKM.5
+In E.3.2.2 of CC:2022 Part 2, "cryptographic key agreement" is mentioned as an operation of FCS_COP.1.1.
+Taking into account that FCS_COP.1 has dependency of FCS_CKM.4 "cryptographic key destruction", as seen in 10.2 of CC v3.1 release 5, 
+PP or ST authors specify "cryptographic key agreement" using FCS_COP.1.1, destruction of the following keys would be required.
+- destruction of a key input to the TOE security function (TSF) enforcing the SFR.
+- destruction of agreed key or derived keying material output from the TSF enforcing the SFR.
+
+However in 10.3.5 of CC:2022 Part 2, the dependency of FCS_CKM.4 or FCS_CKM.6 is not described.
+Therefore PP, ST authors, evaluators, and/or certifiers may fail to recognize the need of cryptographic key destruction.
+This can result in a security hole in TOEs.
+
+Here cryptographic key derivation will normally require input key or secret information, and output derived key or derived keying material.
+FCS_CKM.5 is purposely designed to address these two types of keys. 
+So FCS_CKM.5 can be used to specify cryptographic key agreement with less effort.
+Also FCS_CKM.5 has dependency of FCS_CKM.6 as seen in 10.2.9 of CC:2022 Part 2.
+In addition, as pointed out in E.2.2 and E.2.6.1 of CC:2022 Part 2, cryptographic key destruction is required not only for input key, but also for output derived key within the context of FCS_CKM.5.
+
+Therefore, specifying cryptographic key agreement using rather FCS_CKM.5 than FCS_COP.1 will be considered as a sound approach, by taking into account the FCS_CKM.5, its dependecy and its supporting text.
 
 # CC:2022 Part 3
 ## ALC_TAT.2
